@@ -8,23 +8,14 @@
     <table class="table table-bordered" id="lead-table">
     <thead class="thead-dark">
         <tr>
-        <th scope="col">#</th>
         <th scope="col">First</th>
         <th scope="col">Last</th>
         <th scope="col">Phone number</th>
         <th scope="col">Remove Lead</th>
         </tr>
     </thead>
-    <tbody>
-    <%@leads.each.with_index do |lead,index|%>
-        <tr id="lead <%=lead.id%>">
-        <th scope="row"><%=index+1%></th>
-        <td><%=lead.first_name%></td>
-        <td><%=lead.last_name%></td>
-        <td><%=lead.phone_number%></td>
-        <td><%= link_to 'Delete', lead_path(lead), method: 'delete', data:{ confirm: 'Are you sure?', remote: true }, class: 'btn btn-primary delete' %>
-        </tr>
-        <%end%>
+    <tbody >
+    <%= render @leads %>
     </tbody>
     </table>
    

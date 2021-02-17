@@ -1,0 +1,6 @@
+ <tr id="lead <%=lead.id%>">
+        <td><%=lead.first_name%></td>
+        <td><%=lead.last_name%></td>
+        <td><%=lead.phone_number%></td>
+        <td><%= link_to 'Delete', lead_path(lead), method: 'delete', data:{ confirm: 'Are you sure?', remote: true }, class: 'btn btn-primary delete' %>
+        </tr>

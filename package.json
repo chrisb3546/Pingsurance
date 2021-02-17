@@ -1,5 +1,5 @@
 {
-  "name": "Pingsurance",
+  "name": "pingsurance",
   "private": true,
   "dependencies": {
     "@rails/actioncable": "^6.0.0",

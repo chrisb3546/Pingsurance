@@ -17,17 +17,21 @@
     </thead>
     <tbody>
     <%@leads.each.with_index do |lead,index|%>
-        <tr>
+        <tr id="lead <%=lead.id%>">
         <th scope="row"><%=index+1%></th>
         <td><%=lead.first_name%></td>
         <td><%=lead.last_name%></td>
         <td><%=lead.phone_number%></td>
-        <td><%= link_to 'Delete', lead_path(lead), method: 'delete', class: 'btn btn-primary' %>
+        <td><%= link_to 'Delete', lead_path(lead), method: 'delete', data:{ confirm: 'Are you sure?', remote: true }, class: 'btn btn-primary delete' %>
         </tr>
         <%end%>
     </tbody>
     </table>
    
+</div>
+
+<div id="test">
+TESt
 </div>
 
 

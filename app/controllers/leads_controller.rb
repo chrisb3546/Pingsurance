@@ -24,7 +24,10 @@ class LeadsController < ApplicationController
 
     def destroy
         @lead.destroy
-        redirect_to root_path
+        respond_to do |format|
+            format.js
+            format.html
+        end
     end
 
     private
@@ -33,6 +36,6 @@ class LeadsController < ApplicationController
     end
 
     def find_lead
-        @lead = lead.find_by(id: params[:id])
+        @lead = Lead.find_by(id: params[:id])
     end
 end

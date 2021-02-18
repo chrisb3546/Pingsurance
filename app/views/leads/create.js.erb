@@ -1,4 +1,13 @@
-
-
+<% if @lead.errors.any?%>
+ alert("ERROR(S): Problems with submission attempt, see form")
+ $('.modal-body').prepend("<%= j @lead.errors.full_messages.join(';  ') %>")
+<%else%>
+console.log('now here')
 $("#myNewLead").modal('hide');
+$(".first_name").val('');
+$(".last_name").val('');
+$(".phone_number").val('');
+$(".note").val('');
 $('table#lead-table tbody').append("<%= j render @lead %>")
+
+<% end %>

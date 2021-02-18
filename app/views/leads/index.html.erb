@@ -1,30 +1,23 @@
-<h1>Pingsurance</h1>
+
 
 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myNewLead" data-whatever="addNewLead">Add New Lead</button>
 
-
 <div class="container">
-
-    <table class="table table-bordered" id="lead-table">
+  <table class="table table-bordered" id="lead-table">
     <thead class="thead-dark">
         <tr>
         <th scope="col">First</th>
         <th scope="col">Last</th>
         <th scope="col">Phone number</th>
+        <th scope="col">Text Sent</th>
         <th scope="col">Remove Lead</th>
         </tr>
     </thead>
     <tbody >
     <%= render @leads %>
     </tbody>
-    </table>
-   
+  </table>
 </div>
-
-<div id="test">
-TESt
-</div>
-
 
 <%=form_with model: [ @lead ] do |f|%>
 <div class="modal fade" id="myNewLead" tabindex="-1" role="dialog"  aria-hidden="true">
@@ -62,5 +55,10 @@ TESt
       </div>
     </div>
   </div>
+  
 </div>
+
 <%end%>
+
+
+

@@ -2,7 +2,6 @@
  alert("ERROR(S): Problems with submission attempt, see form")
  $('.modal-body').prepend("<%= j @lead.errors.full_messages.join(';  ') %>")
 <%else%>
-console.log('now here')
 $("#myNewLead").modal('hide');
 $(".first_name").val('');
 $(".last_name").val('');

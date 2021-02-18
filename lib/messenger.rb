@@ -6,16 +6,16 @@ module Messenger
         auth_token = ENV['TWILIO_AUTH_TOKEN']
 
         hello = 'hello'
-        # byebug
-        # @client = Twilio::REST::Client.new account_sid, auth_token
+        
+        @client = Twilio::REST::Client.new account_sid, auth_token
 
-        # from = '+14129601023'
+        from = '+14129601023'
 
-        # message = @client.messages.create(
-        #     from: from,
-        #     to: '+1'+number,
-        #     body: note
-        # )
+        message = @client.messages.create(
+            from: from,
+            to: '+1'+number,
+            body: note
+        )
     end
     
 

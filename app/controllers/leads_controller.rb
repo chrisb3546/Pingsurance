@@ -8,13 +8,14 @@ class LeadsController < ApplicationController
 
     def create
         @lead = Lead.new(lead_params)
-        @lead.send_sms(@lead.clean_number, @lead.note)
+        
         respond_to do |format|
             if @lead.save
-            format.js 
+                @lead.send_sms(@lead.clean_number, @lead.note)
+                format.js 
             else
                 format.js
-                format.json { render json: @posts.errors, status: :unprocessable_entity }
+                format.json { render json: @lead.errors, status: :unprocessable_entity }
             end
         end
     end
